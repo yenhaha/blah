@@ -29,7 +29,7 @@
 				margin-bottom: 30px;
 			}
 			.content{
-				margin-left: 20px;
+				margin-left: 30px;
 			}
 		</style>
 	</head>

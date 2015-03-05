@@ -54,3 +54,24 @@
 		
 		return $rows;
 	}
+	
+	function updpatient($patientid)
+	{
+		$db = site_db();
+		$sql = "update patient set lname=?, fname=?, mname=?, gender=?, contactno=?, birthdate=?, address=?, occupation=?, civilstat=?, spousename=?, spousecontact=?, status=? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($patientid));
+		$db = null;
+	}
+	
+	function updgetpatient()
+	{
+		$db = site_db();
+		$sql = "select patientid, lname, fname, mname from patient where status = 1 order by lname asc";
+		$st = $db->prepare($sql);
+		$st->execute();
+		$rows = $st->fetchAll();
+		$db = null;
+		
+		return $rows;
+	}
