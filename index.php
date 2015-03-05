@@ -31,9 +31,6 @@
 			.content{
 				margin-left: 20px;
 			}
-			.table{
-				width: 900px;
-			}
 		</style>
 	</head>
 	<body>
@@ -55,7 +52,7 @@
 						<ul class="nav navbar-nav">
 						  <li><a href="?p=addpatient">Add</a></li>
 						  <li><a href="#">Update</a></li>
-						  <li><a href="#">Delete</a></li>
+						  <li><a href="?p=delpatient">Delete</a></li>
 						  <li><a href="?p=viewpatient">View</a></li>
 						  <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>

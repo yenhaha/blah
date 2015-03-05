@@ -33,3 +33,24 @@
 		
 		return $rows;
 	}
+	
+	function delpatient($patientid)
+	{
+		$db = site_db();
+		$sql = "update patient set status = 0 where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($patientid));
+		$db = null;
+	}
+	
+	function delgetpatient()
+	{
+		$db = site_db();
+		$sql = "select patientid, lname, fname, mname from patient where status = 1 order by lname asc";
+		$st = $db->prepare($sql);
+		$st->execute();
+		$rows = $st->fetchAll();
+		$db = null;
+		
+		return $rows;
+	}

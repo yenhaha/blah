@@ -20,6 +20,8 @@
 <html>
 	<head><title>addpatient.php</title>
 	<body>
+		<br>
+		<h4>ADD PATIENT</h4>
 		<div class = "row">
 			<div class = "col-md-3">
 				<form method = "post">
@@ -54,7 +56,7 @@
 						<input type = "radio" name = "pstatus" value = "0"> Inactive
 					</div>
 					<div class = "form-group">
-						<button type = "submit" name = "submit" "class = "btn btn-primary">Save</button>
+						<button type = "submit" name = "submit" class = "btn btn-primary">Save</button>
 					</div>
 				</form>
 			</div>
