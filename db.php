@@ -22,7 +22,14 @@
 		$db = null;
 	}
 	
-	function updpatient ($lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone)
+	function viewpatient()
 	{
 		$db = site_db();
+		$sql = "select * from patient order by 1 asc";
+		$st = $db->prepare($sql);
+		$st->execute();
+		$rows = $st->fetchAll();
+		$db = null;
+		
+		return $rows;
 	}

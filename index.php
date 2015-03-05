@@ -31,11 +31,15 @@
 			.content{
 				margin-left: 20px;
 			}
+			.table{
+				width: 900px;
+			}
 		</style>
 	</head>
 	<body>
 		<div class = "container-fluid">
 			<div class = "content">
+				<br>
 				  <nav class="navbar navbar-fixed">
 					<div class="container-fluid">
 					  <div class="navbar-header">
@@ -50,8 +54,9 @@
 					  <div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 						  <li><a href="?p=addpatient">Add</a></li>
-						  <li><a href="#">About</a></li>
-						  <li><a href="#">Contact</a></li>
+						  <li><a href="#">Update</a></li>
+						  <li><a href="#">Delete</a></li>
+						  <li><a href="?p=viewpatient">View</a></li>
 						  <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
