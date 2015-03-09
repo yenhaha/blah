@@ -3,8 +3,11 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<head><title>viewpatient.php</title></head>
+	<head><title>View Patient</title></head>
 	<body>
+		<br>
+		<h4>VIEW PATIENT</h4>
+		<hr />
 		<div class = "col-md-8">
 			<table class = "table table-hover">
 				<thead>

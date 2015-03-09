@@ -12,48 +12,50 @@
 		$cstatus = trim($_POST['cstatus']);
 		$sname = trim($_POST['sname']);
 		$sphone = trim($_POST['sphone']);
-		$pstatus = trim($_POST['pstatus']);
-		addpatient($lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone, $pstatus);
+		addpatient($lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone);
+		echo "<div style = 'color: #61C000;'>Patient added successfully!</div>" . "<br />";
 	}
 ?>
 <!DOCTYPE html>
 <html>
-	<head><title>addpatient.php</title>
+	<head><title>Add Patient</title>
 	<body>
 		<br>
 		<h4>ADD PATIENT</h4>
+		<hr />
 		<div class = "row">
-			<div class = "col-md-3">
+			<div class = "col-md-2">
 				<form method = "post">
 					<div class = "form-group">
 						<label>Last Name:</label><br>
-						<input type = "text" name = "lname" required = "required"><br><br>
+						<input type = "text" name = "lname" required = "required" class = "form-control"><br><br>
 						<label>First Name:</label><br>
-						<input type = "text" name = "fname" required = "required"><br><br>
+						<input type = "text" name = "fname" required = "required" class = "form-control"><br><br>
 						<label>Middle Initial:</label><br>
-						<input type = "text" name = "mname" required = "required"><br><br>
+						<input type = "text" name = "mname" required = "required" class = "form-control"><br><br>
 						<label>Gender:</label><br>
-						<input type = "radio" name = "gender" value = "Male"> Male
-						<input type = "radio" name = "gender" value = "Female"> Female<br><br>
+						<select class = "form-control" name = "gender">
+							<option value = "Male">Male</option>
+							<option value = "Female">Female</option>
+						</select><br>
 						<label>Contact No:</label><br>
-						<input type = "text" name = "contact" required = "required"><br><br>
+						<input type = "text" name = "contact" required = "required" class = "form-control"><br><br>
 						<label>Birthdate:</label><br>
-						<input type = "date" name = "bdate" required = "required"><br><br>
+						<input type = "date" name = "bdate" required = "required" class = "form-control"><br><br>
 						<label>Address:</label><br>
-						<input type = "text" name = "address" required = "required"><br><br>
+						<input type = "text" name = "address" required = "required" class = "form-control"><br><br>
 						<label>Occupation:</label><br>
-						<input type = "text" name = "occupation" required = "required"><br><br>
+						<input type = "text" name = "occupation" required = "required" class = "form-control"><br><br>
 						<label>Civil Status:</label><br>
-						<input type = "radio" name = "cstatus" value = "Single"> Single
-						<input type = "radio" name = "cstatus" value = "Married"> Married
-						<input type = "radio" name = "cstatus" value = "Widowed"> Widowed<br><br>
+						<select name = "cstatus" class = "form-control">
+							<option value = "Single">Single</option>
+							<option value = "Married">Married</option>
+							<option value = "Widowed">Widowed</option>
+						</select><br>
 						<label>Spouse Name:</label><br>
-						<input type = "text" name = "sname"><br><br>
+						<input type = "text" name = "sname" class = "form-control"><br><br>
 						<label>Spouse Contact:</label><br>
-						<input type = "text" name = "sphone"><br><br>
-						<label>Status:</label><br>
-						<input type = "radio" name = "pstatus" value = "1"> Active
-						<input type = "radio" name = "pstatus" value = "0"> Inactive
+						<input type = "text" name = "sphone" class = "form-control"><br><br>
 					</div>
 					<div class = "form-group">
 						<button type = "submit" name = "submit" class = "btn btn-primary">Save</button>

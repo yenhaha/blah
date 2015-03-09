@@ -1,14 +1,15 @@
 <?php
 	include "db.php";
-	$page = isset($_GET['p']) ? $_GET['p'] : 'index';
+	$page = isset($_GET['p']) ? $_GET['p'] : 'home';
 	
 	$content = $page.".php";
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+		<script src="../bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<style>
 			body{
 				margin: 0 auto;
@@ -31,54 +32,36 @@
 			.content{
 				margin-left: 30px;
 			}
+
 		</style>
 	</head>
 	<body>
 		<div class = "container-fluid">
 			<div class = "content">
-				<br>
-				  <nav class="navbar navbar-fixed">
-					<div class="container-fluid">
-					  <div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						  <span class="sr-only">Toggle navigation</span>
-						  <span class="icon-bar"></span>
-						  <span class="icon-bar"></span>
-						  <span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="?p=index">Tan Dental Clinic</a>
-					  </div>
-					  <div id="navbar" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-						  <li><a href="?p=addpatient">Add</a></li>
-						  <li><a href="#">Update</a></li>
-						  <li><a href="?p=delpatient">Delete</a></li>
-						  <li><a href="?p=viewpatient">View</a></li>
-						  <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-							  <li><a href="#">Action</a></li>
-							  <li><a href="#">Another action</a></li>
-							  <li><a href="#">Something else here</a></li>
-							  <li class="divider"></li>
-							  <li class="dropdown-header">Nav header</li>
-							  <li><a href="#">Separated link</a></li>
-							  <li><a href="#">One more separated link</a></li>
+				<nav class = "navbar navbar-default"  style = "height:60px;">
+					<div class = "container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>                        
+							</button>
+							<a class="navbar-brand" href="#" style = "padding:20px;">Tan Dental Clinic</a>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar">
+							<ul class = "nav navbar-nav pull-right" style = "padding:5px;">
+								<li><a href ="?p=addpatient" id = "home"><span class = "glyphicon glyphicon-plus-sign"></span><b>&nbsp;Add</b></a></li>
+								<li><a href ="?p=updpatient"><span class = "glyphicon glyphicon-pencil"></span><b>&nbsp;Update</b></a></li>
+								<li><a href ="?p=delpatient"><span class = "glyphicon glyphicon-trash"></span><b>&nbsp;Delete</b></a></li>
+								<li><a href ="?p=viewpatient"><span class = "glyphicon glyphicon-th-list"></span><b>&nbsp;View</b></a></li>
 							</ul>
-						  </li>
-						</ul>
-					  </div><!--/.nav-collapse -->
-					</div><!--/.container-fluid -->
-				  </nav>
+						</div>
+					</div>	
+				</nav>
 				<div class = "main-content">
 					<?php include_once($content); ?>
 				</div>
 			</div>
 		</div>
-		<!--
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-		-->
 	</body>
-	
 </html>

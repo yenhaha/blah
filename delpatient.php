@@ -10,10 +10,11 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<head><title>delpatient.php</title>
+	<head><title>Delete Patient</title>
 	<body>
 		<br>
 		<h4>DELETE PATIENT</h4>
+		<hr />
 		<div class = "row">
 			<div class = "col-md-3">
 				<form class = "form" method = "post">
