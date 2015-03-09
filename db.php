@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	function site_db()
 	{
 		try
@@ -12,12 +12,48 @@
 		}
 	}
 	
-	function addpatient($lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone)
+	function login($username, $password)
 	{
 		$db = site_db();
-		$sql = "insert into patient(lname, fname, mname, gender, contactno, birthdate, address, occupation, civilstat, spousename, spousecontact, status) values (?,?,?,?,?,?,?,?,?,?,?,?)";
+		$sql = "select * from users where username = ?";
 		$st = $db->prepare($sql);
-		$st->execute(array($lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone, 1));
+		$st->execute(array($username));
+		$row = $st->fetch();
+		$db = null;
+		
+		if($row['password'] == $password && $row['username'] == 'admin')
+		{
+			$_SESSION['userid'] = $row['id'];
+			$_SESSION['isloginadmin'] = true;
+			//$_SESSION['isloginpatient'] = true;
+			return true;
+		}
+		else if($row['password'] == $password && $row['username'] != 'admin')
+		{
+			$_SESSION['userid'] = $row['id'];
+			//$_SESSION['isloginpatient'] = true;
+			return true;
+		}
+		else
+		{
+			$_SESSION['isloginadmin'] = false;
+			//$_SESSION['isloginpatient'] = false;
+			return false;
+		}
+	}
+	
+	function logout()
+	{
+		session_unset();
+		session_destroy();
+		session_regenerate_id();
+	}
+	function addpatient($username, $password, $lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone)
+	{
+		$db = site_db();
+		$sql = "insert into patient(username, password, lname, fname, mname, gender, contactno, birthdate, address, occupation, civilstat, spousename, spousecontact, status) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$st = $db->prepare($sql);
+		$st->execute(array($username, $password, $lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone, 1));
 		$db = null;
 	}
 	
@@ -180,3 +216,4 @@
 		$st->execute(array($sphone, $patientid));
 		$db = null;
 	}
+
