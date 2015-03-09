@@ -1,6 +1,6 @@
 <?php
 	include "db.php";
-	$page = isset($_GET['p']) ? $_GET['p'] : 'home';
+	$page = isset($_GET['p']) ? $_GET['p'] : 'addpatient';
 	
 	$content = $page.".php";
 ?>

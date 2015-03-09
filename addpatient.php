@@ -34,7 +34,7 @@
 						<label>Middle Initial:</label><br>
 						<input type = "text" name = "mname" required = "required" class = "form-control"><br><br>
 						<label>Gender:</label><br>
-						<select class = "form-control" name = "gender">
+						<select class = "form-control" name = "gender" required = "required">
 							<option value = "Male">Male</option>
 							<option value = "Female">Female</option>
 						</select><br>
@@ -47,7 +47,7 @@
 						<label>Occupation:</label><br>
 						<input type = "text" name = "occupation" required = "required" class = "form-control"><br><br>
 						<label>Civil Status:</label><br>
-						<select name = "cstatus" class = "form-control">
+						<select name = "cstatus" required = "required" class = "form-control">
 							<option value = "Single">Single</option>
 							<option value = "Married">Married</option>
 							<option value = "Widowed">Widowed</option>

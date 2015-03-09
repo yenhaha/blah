@@ -3,7 +3,7 @@
 	
 	if(isset($_POST['submit']))
 	{
-		$patientid = ($_POST['patientid']);
+		$patientid = $_POST['patientid'];
 		delpatient($_POST['patientid']);
 		echo "<div style = 'color: #61C000;'>Patient deleted successfully!</div>" . "<br />";
 	}

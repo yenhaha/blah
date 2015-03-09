@@ -15,7 +15,7 @@
 	
 	if(isset($_POST['submit']))
 	{
-		$patientid = trim(S_POST['patientid']);
+		$patientid = trim($_POST['patientid']);
 		$lname = trim($_POST['lname']);
 		$fname = trim($_POST['fname']);
 		$mname = trim($_POST['mname']);
@@ -28,7 +28,7 @@
 		$sname = trim($_POST['sname']);
 		$sphone = trim($_POST['sphone']);
 		updpatient($patientid, $lname, $fname, $mname, $gender, $contact, $bdate, $address, $occupation, $cstatus, $sname, $sphone);
-			echo "<div style = 'color: #61C000;'>Patient updated successfully!</div>" . "<br />";
+		echo "<div style = 'color: #61C000;'>Patient updated successfully!</div>" . "<br />";
 	}
 ?>
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
 							<?php foreach($getupdpatient as $d): ?>
 								<option value = "<?php echo htmlentities($d['patientid']); ?>"><?php echo htmlentities($d['lname']); ?>, <?php echo htmlentities($d['fname']); ?> <?php echo htmlentities($d['mname']); ?>.</option>
 							<?php endforeach; ?>
-						 </select><br>
+						</select><br>
 						<label>Last Name:</label><br>
 						<input type = "text" name = "lname" class = "form-control" value = "<?php htmlentities($lname); ?>"><br><br>
 						<label>First Name:</label><br>

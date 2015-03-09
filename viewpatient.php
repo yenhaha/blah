@@ -1,39 +1,35 @@
 <?php
-	$patient = viewpatient();
+	$viewpatient = viewpatient();
 ?>
 <!DOCTYPE html>
 <html>
-	<head><title>View Patient</title></head>
+	<head><title>View Patients</title></head>
 	<body>
 		<br>
-		<h4>VIEW PATIENT</h4>
+		<h4>VIEW PATIENTS</h4>
 		<hr />
-		<div class = "col-md-8">
+		<div class = "col-md-12">
 			<table class = "table table-hover">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Last Name</th>
-						<th>First Name</th>
-						<th>MI</th>
+						<th>Name</th>
 						<th>Gender</th>
 						<th>Contact</th>
-						<th>BirthDate</th>
+						<th>Birth Date</th>
 						<th>Address</th>
 						<th>Occupation</th>
-						<th>CivilStatus</th>
+						<th>Civil Status</th>
 						<th>Spouse Name</th>
 						<th>Spouse Phone</th>
 						<th>Status</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach($patient as $pat): ?>
+					<?php foreach($viewpatient as $pat): ?>
 						<tr>
 							<td><?php echo htmlentities($pat['patientid']); ?></td>
-							<td><?php echo htmlentities($pat['lname']); ?></td>
-							<td><?php echo htmlentities($pat['fname']); ?></td>
-							<td><?php echo htmlentities($pat['mname']); ?></td>
+							<td><?php echo htmlentities($pat['lname']); ?>, <?php echo htmlentities($pat['fname']); ?> <?php echo htmlentities($pat['mname']); ?>.</td>
 							<td><?php echo htmlentities($pat['gender']); ?></td>
 							<td><?php echo htmlentities($pat['contactno']); ?></td>
 							<td><?php echo htmlentities($pat['birthdate']); ?></td>

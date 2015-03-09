@@ -24,9 +24,9 @@
 	function viewpatient()
 	{
 		$db = site_db();
-		$sql = "select * from patient order by 1 asc";
+		$sql = "select * from patient where status = ? order by 1 asc";
 		$st = $db->prepare($sql);
-		$st->execute();
+		$st->execute(array(1));
 		$rows = $st->fetchAll();
 		$db = null;
 		
@@ -100,4 +100,83 @@
 		$st->execute(array($lname, $patientid));
 		$db = null;
 	}
-	
+	function update_fname($patientid, $fname)
+	{
+		$db = site_db();
+		$sql = "update patient set fname = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($fname, $patientid));
+		$db = null;
+	}
+	function update_mname($patientid, $mname)
+	{
+		$db = site_db();
+		$sql = "update patient set mname = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($mname, $patientid));
+		$db = null;
+	}
+	function update_gender($patientid, $gender)
+	{
+		$db = site_db();
+		$sql = "update patient set gender = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($gender, $patientid));
+		$db = null;
+	}
+	function update_contact($patientid, $contact)
+	{
+		$db = site_db();
+		$sql = "update patient set contact = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($contact, $patientid));
+		$db = null;
+	}
+	function update_bdate($patientid, $bdate)
+	{
+		$db = site_db();
+		$sql = "update patient set bdate = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($bdate, $patientid));
+		$db = null;
+	}
+	function update_address($patientid, $address)
+	{
+		$db = site_db();
+		$sql = "update patient set address = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($address, $patientid));
+		$db = null;
+	}
+	function update_occupation($patientid, $occupation)
+	{
+		$db = site_db();
+		$sql = "update patient set occupation = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($occupation, $patientid));
+		$db = null;
+	}
+	function update_cstatus($patientid, $cstatus)
+	{
+		$db = site_db();
+		$sql = "update patient set cstatus = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($cstatus, $patientid));
+		$db = null;
+	}
+	function update_sname($patientid, $sname)
+	{
+		$db = site_db();
+		$sql = "update patient set sname = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($sname, $patientid));
+		$db = null;
+	}
+	function update_sphone($patientid, $sphone)
+	{
+		$db = site_db();
+		$sql = "update patient set sphone = ? where patientid = ?";
+		$st = $db->prepare($sql);
+		$st->execute(array($sphone, $patientid));
+		$db = null;
+	}
