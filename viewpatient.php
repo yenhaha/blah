@@ -22,7 +22,6 @@
 						<th>Civil Status</th>
 						<th>Spouse Name</th>
 						<th>Spouse Phone</th>
-						<th>Status</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,7 +37,6 @@
 							<td><?php echo htmlentities($pat['civilstat']); ?></td>
 							<td><?php echo htmlentities($pat['spousename']); ?></td>
 							<td><?php echo htmlentities($pat['spousecontact']); ?></td>
-							<td><?php echo htmlentities($pat['status']); ?></td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>
